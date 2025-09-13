@@ -1,0 +1,311 @@
+/* Complete rewrite for 1acre.in responsive design and styling */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default Vite styles */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Responsive Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Header Responsive Adjustments */
+.header-mobile-menu {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .header-mobile-menu {
+    display: none;
+  }
+}
+
+/* Map Interface Responsive */
+.map-container {
+  height: 100vh;
+  min-height: 600px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 70vh;
+    min-height: 500px;
+  }
+}
+
+/* Property Cards Grid Responsive */
+.property-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .property-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Form Responsive Layouts */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Button Responsive Sizing */
+.btn-responsive {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .btn-responsive {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Text Responsive Sizing */
+.text-responsive-xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+/* Footer Responsive */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Map Controls Mobile Positioning */
+.map-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+@media (max-width: 640px) {
+  .map-controls {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .map-controls button {
+    padding: 0.5rem;
+  }
+}
+
+/* Search Bar Mobile Adjustments */
+.search-container {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 28rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 640px) {
+  .search-container {
+    top: 1rem;
+    max-width: none;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Property Info Panel Mobile */
+.property-info-panel {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  max-width: 24rem;
+}
+
+@media (max-width: 640px) {
+  .property-info-panel {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+    padding: 1rem;
+  }
+}
+
+/* Login Form Mobile */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .login-container {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Navigation Menu Mobile Improvements */
+.mobile-nav {
+  display: none;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+/* Utility Classes for Responsive Design */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Smooth Transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Focus States for Accessibility */
+.focus-ring:focus {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-full-width {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .btn-yellow {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark Mode Preparation (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  .auto-dark {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+}
