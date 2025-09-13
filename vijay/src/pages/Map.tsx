@@ -161,29 +161,35 @@ const Map = () => {
         if (pricePerAcre < 20) return "#FEF08A" // Light yellow
         if (pricePerAcre < 40) return "#FDE047" // Yellow
         if (pricePerAcre < 60) return "#FACC15" // Darker yellow
-        if (pricePerAcre < 80) return "#EAB308" // Gold
+        if (pricePerAcre < 80) return "#F59E0B" // Amber/Orange
         if (pricePerAcre < 100) return "#F97316" // Orange
         if (pricePerAcre < 120) return "#EA580C" // Dark orange
         return "#DC2626" // Red
     }
 
     return (
-        <div className="h-screen w-full relative">
+        <div className="h-screen w-full relative bg-white">
             <MapContainer
-                center={[20.5937, 78.9629]} // Center of India
-                zoom={6}
+                center={[16.5062, 80.648]} // Centered on Vijayawada region like 1acre.in screenshot
+                zoom={10} // Increased zoom to match 1acre.in view level
                 style={{ height: "100%", width: "100%" }}
                 className="z-0"
                 zoomControl={false}
             >
                 <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    attribution='&copy; <a href="https://www.esri.com/">Esri</a> &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                    maxZoom={19}
                 />
 
                 <TileLayer
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}"
                     opacity={0.7}
+                />
+
+                <TileLayer
+                    url="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"
+                    opacity={0.8}
                 />
 
                 {majorCities.map((city) => (
@@ -194,12 +200,12 @@ const Map = () => {
                     <CircleMarker
                         key={property.id}
                         center={property.position}
-                        radius={4}
+                        radius={6} // Increased marker size to match 1acre.in
                         pathOptions={{
                             fillColor: getMarkerColor(property.pricePerAcre),
                             color: getMarkerColor(property.pricePerAcre),
-                            weight: 1,
-                            opacity: 0.8,
+                            weight: 2, // Increased border weight for better visibility
+                            opacity: 0.9, // Increased opacity to match 1acre.in
                             fillOpacity: 0.8,
                         }}
                     >
@@ -321,7 +327,6 @@ const Map = () => {
                                         </div>
                                     </div>
 
-                                    {/* Contact button */}
                                     <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-4 rounded-lg transition-colors">
                                         Contact 1acre
                                     </button>
@@ -342,12 +347,12 @@ const Map = () => {
                             placeholder="Enter Location"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-80 pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                            className="w-80 pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg shadow-md focus:ring-2 focus:ring-yellow-400 focus:border-transparent outline-none text-gray-700"
                         />
                     </div>
                     <button
                         onClick={() => setShowFilters(!showFilters)}
-                        className="px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors flex items-center gap-2"
+                        className="px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-50 transition-colors flex items-center gap-2 text-gray-700"
                     >
                         <Filter className="w-4 h-4" />
                         Filters
@@ -357,7 +362,7 @@ const Map = () => {
                 {/* Layers Control */}
                 <button
                     onClick={() => setShowLayers(!showLayers)}
-                    className="px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors flex items-center gap-2"
+                    className="px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-50 transition-colors flex items-center gap-2 text-gray-700"
                 >
                     <Layers className="w-4 h-4" />
                     Layers
@@ -365,10 +370,10 @@ const Map = () => {
             </div>
 
             <div className="absolute bottom-6 right-6 z-10 flex flex-col space-y-2">
-                <button className="w-10 h-10 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center">
+                <button className="w-10 h-10 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-50 transition-colors flex items-center justify-center">
                     <Plus className="w-5 h-5 text-gray-600" />
                 </button>
-                <button className="w-10 h-10 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors flex items-center justify-center">
+                <button className="w-10 h-10 bg-white border border-gray-300 rounded-lg shadow-md hover:bg-gray-50 transition-colors flex items-center justify-center">
                     <Minus className="w-5 h-5 text-gray-600" />
                 </button>
             </div>
@@ -423,8 +428,8 @@ const Map = () => {
                                     <button
                                         key={type}
                                         className={`px-4 py-2 rounded-full border-2 flex items-center gap-2 ${filters.listedBy[type.toLowerCase() === "1acre" ? "acre" : type.toLowerCase()]
-                                            ? "bg-gray-200 border-gray-400"
-                                            : "bg-white text-gray-500 border-gray-300"
+                                                ? "bg-gray-200 border-gray-400"
+                                                : "bg-white text-gray-500 border-gray-300"
                                             }`}
                                         onClick={() => {
                                             const key = type.toLowerCase() === "1acre" ? "acre" : type.toLowerCase()
@@ -447,8 +452,8 @@ const Map = () => {
                                         <button
                                             key={period}
                                             className={`px-4 py-2 rounded-full border-2 flex items-center justify-between ${filters.uploadDate === period
-                                                ? "bg-black text-white border-black"
-                                                : "bg-white text-gray-700 border-gray-300"
+                                                    ? "bg-black text-white border-black"
+                                                    : "bg-white text-gray-700 border-gray-300"
                                                 }`}
                                             onClick={() => setFilters((prev) => ({ ...prev, uploadDate: period }))}
                                         >
