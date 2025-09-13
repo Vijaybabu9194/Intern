@@ -10,6 +10,8 @@ import Login from "./pages/Login"
 import About from "./pages/About"
 import TermsAndConditions from "./pages/TermsAndConditions"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
+import Handholding from "./pages/Handholding"
+import TagAlong from "./pages/TagAlong"
 import "./App.css"
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/buy-land" element={<BuyLand />} />
+            <Route path="/handholding" element={<Handholding />} />
+            <Route path="/tag-along" element={<TagAlong />} />
             <Route path="/sell-land" element={<SellLand />} />
             <Route path="/map" element={<Map />} />
             <Route path="/subscribe" element={<Subscribe />} />

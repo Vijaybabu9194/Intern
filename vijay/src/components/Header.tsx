@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import {
     Menu,
     X,
     MapPin,
-    User,
+    Crown,
     Info,
     CheckSquare,
     Phone,
@@ -20,6 +20,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [phoneNumber, setPhoneNumber] = useState("")
+    const location = useLocation()
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -56,25 +57,38 @@ const Header = () => {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex items-center space-x-8">
+                        <nav className="hidden md:flex items-center space-x-4">
                             <Link
                                 to="/map"
-                                className="text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1"
+                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1 px-2 ${location.pathname === "/map" ? "font-bold" : ""
+                                    }`}
                             >
                                 <MapPin className="w-4 h-4" />
                                 Map
                             </Link>
-                            <Link to="/buy-land" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                            <div className="w-px h-6 bg-gray-300"></div>
+                            <Link
+                                to="/buy-land"
+                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors px-2 ${location.pathname === "/buy-land" ? "font-bold" : ""
+                                    }`}
+                            >
                                 Buy Land
                             </Link>
-                            <Link to="/sell-land" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                            <div className="w-px h-6 bg-gray-300"></div>
+                            <Link
+                                to="/sell-land"
+                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors px-2 ${location.pathname === "/sell-land" ? "font-bold" : ""
+                                    }`}
+                            >
                                 Sell Land
                             </Link>
+                            <div className="w-px h-6 bg-gray-300"></div>
                             <Link
                                 to="/subscribe"
-                                className="text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1"
+                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1 px-2 ${location.pathname === "/subscribe" ? "font-bold" : ""
+                                    }`}
                             >
-                                <User className="w-4 h-4" />
+                                <Crown className="w-4 h-4 text-yellow-500" />
                                 Subscribe
                             </Link>
                         </nav>
@@ -109,8 +123,8 @@ const Header = () => {
                             {/* Header with Login and Close */}
                             <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                                        <User className="w-6 h-6 text-gray-600" />
+                                    <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                        <Crown className="w-6 h-6 text-yellow-500" />
                                     </div>
                                     <button onClick={openLoginModal} className="text-xl font-semibold text-black underline">
                                         Login

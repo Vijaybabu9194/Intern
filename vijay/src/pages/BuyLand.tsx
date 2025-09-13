@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Handshake, Users } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const BuyLand = () => {
     return (
@@ -24,36 +25,38 @@ const BuyLand = () => {
                 {/* Service Cards */}
                 <div className="space-y-6">
                     {/* Hand Holding Card */}
-                    <div className="bg-yellow-100 rounded-lg p-8 flex items-center justify-between hover:bg-yellow-200 transition-colors cursor-pointer">
-                        <div className="flex items-center">
-                            <div className="mr-6">
-                                <div className="w-8 h-8 bg-yellow-400 rounded flex items-center justify-center">
-                                    <span className="text-black font-bold">🤝</span>
+                    <Link to="/handholding">
+                        <div className="bg-yellow-100 rounded-2xl p-8 flex items-center justify-between hover:bg-yellow-200 transition-colors cursor-pointer">
+                            <div className="flex items-center">
+                                <div className="mr-6">
+                                    <Handshake className="w-8 h-8 text-gray-700" />
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Hand holding</h3>
+                                    <p className="text-gray-700 text-lg">We help you find, evaluate, and buy the right lands.</p>
                                 </div>
                             </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Hand holding</h3>
-                                <p className="text-gray-700">We help you find, evaluate, and buy the right lands.</p>
-                            </div>
+                            <ArrowRight className="w-6 h-6 text-gray-600" />
                         </div>
-                        <ArrowRight className="w-6 h-6 text-gray-600" />
-                    </div>
+                    </Link>
 
                     {/* Tag Along Card */}
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 flex items-center justify-between hover:bg-gray-100 transition-colors cursor-pointer">
-                        <div className="flex items-center">
-                            <div className="mr-6">
-                                <div className="w-8 h-8 bg-gray-300 rounded flex items-center justify-center">
-                                    <span className="text-black font-bold">👥</span>
+                    <Link to="/tag-along">
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer">
+                            <div className="flex items-center">
+                                <div className="mr-6">
+                                    <Users className="w-8 h-8 text-gray-700" />
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Tag along</h3>
+                                    <p className="text-gray-700 text-lg">
+                                        We Buy Lands. You can tag-along with us. (Starting at 4 lakh/ acre)
+                                    </p>
                                 </div>
                             </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">Tag along</h3>
-                                <p className="text-gray-700">We Buy Lands. You can tag-along with us. (Starting at 4 lakh/ acre)</p>
-                            </div>
+                            <ArrowRight className="w-6 h-6 text-gray-600" />
                         </div>
-                        <ArrowRight className="w-6 h-6 text-gray-600" />
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>
