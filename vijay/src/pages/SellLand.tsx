@@ -36,7 +36,11 @@ const SellLand = () => {
                             {[...Array(3)].map((_, index) => (
                                 <div key={index} className="flex items-center space-x-16 flex-shrink-0">
                                     <div className="flex items-center space-x-4">
-                                        <img src="/rural-land-property.png" alt="Property" className="w-14 h-14 rounded-lg object-cover" />
+                                        <img
+                                            src="/farmland-property.jpg"
+                                            alt="Farmland Property"
+                                            className="w-14 h-14 rounded-lg object-cover"
+                                        />
                                         <div>
                                             <div className="flex items-center space-x-2">
                                                 <span className="text-sm font-semibold text-gray-900">SUNNY</span>
@@ -44,16 +48,20 @@ const SellLand = () => {
                                                     Agent
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-700 font-medium">180 Sq Yards • Andhra Pradesh</p>
+                                            <p className="text-sm text-gray-700 font-medium">5 Acres • Andhra Pradesh</p>
                                             <div className="flex items-center space-x-1">
                                                 <span className="text-blue-500 text-xs">✓</span>
-                                                <span className="text-xs text-gray-500">Plot Listed • 1hr ago</span>
+                                                <span className="text-xs text-gray-500">Farmland Listed • 1hr ago</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center space-x-4">
-                                        <img src="/agricultural-land.png" alt="Property" className="w-14 h-14 rounded-lg object-cover" />
+                                        <img
+                                            src="/residential-plot.jpg"
+                                            alt="Residential Plot"
+                                            className="w-14 h-14 rounded-lg object-cover"
+                                        />
                                         <div>
                                             <div className="flex items-center space-x-2">
                                                 <span className="text-sm font-semibold text-gray-900">Charan M N</span>
@@ -61,16 +69,20 @@ const SellLand = () => {
                                                     Owner
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-700 font-medium">1 Acre • Karnataka</p>
+                                            <p className="text-sm text-gray-700 font-medium">2400 Sq Ft • Karnataka</p>
                                             <div className="flex items-center space-x-1">
                                                 <span className="text-blue-500 text-xs">✓</span>
-                                                <span className="text-xs text-gray-500">Land Listed • 1hr ago</span>
+                                                <span className="text-xs text-gray-500">Plot Listed • 2hrs ago</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center space-x-4">
-                                        <img src="/rural-land-property.png" alt="Property" className="w-14 h-14 rounded-lg object-cover" />
+                                        <img
+                                            src="/commercial-land.jpg"
+                                            alt="Commercial Land"
+                                            className="w-14 h-14 rounded-lg object-cover"
+                                        />
                                         <div>
                                             <div className="flex items-center space-x-2">
                                                 <span className="text-sm font-semibold text-gray-900">Rajesh Kumar</span>
@@ -78,16 +90,16 @@ const SellLand = () => {
                                                     Owner
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-700 font-medium">12.5 Acres • Karnataka</p>
+                                            <p className="text-sm text-gray-700 font-medium">8.5 Acres • Maharashtra</p>
                                             <div className="flex items-center space-x-1">
                                                 <span className="text-blue-500 text-xs">✓</span>
-                                                <span className="text-xs text-gray-500">Verified • 1hr ago</span>
+                                                <span className="text-xs text-gray-500">Commercial Verified • 3hrs ago</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center space-x-4">
-                                        <img src="/agricultural-land.png" alt="Property" className="w-14 h-14 rounded-lg object-cover" />
+                                        <img src="/orchard-land.jpg" alt="Orchard Land" className="w-14 h-14 rounded-lg object-cover" />
                                         <div>
                                             <div className="flex items-center space-x-2">
                                                 <span className="text-sm font-semibold text-gray-900">Priya Sharma</span>
@@ -95,10 +107,52 @@ const SellLand = () => {
                                                     Agent
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-700 font-medium">3.2 Acres • Maharashtra</p>
+                                            <p className="text-sm text-gray-700 font-medium">12 Acres • Punjab</p>
                                             <div className="flex items-center space-x-1">
                                                 <span className="text-blue-500 text-xs">✓</span>
-                                                <span className="text-xs text-gray-500">Premium Listed • 3hrs ago</span>
+                                                <span className="text-xs text-gray-500">Orchard Listed • 4hrs ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center space-x-4">
+                                        <img
+                                            src="/industrial-plot.jpg"
+                                            alt="Industrial Plot"
+                                            className="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <div className="flex items-center space-x-2">
+                                                <span className="text-sm font-semibold text-gray-900">Amit Patel</span>
+                                                <span className="px-2 py-1 bg-green-200 text-green-800 text-xs rounded font-semibold">
+                                                    Owner
+                                                </span>
+                                            </div>
+                                            <p className="text-sm text-gray-700 font-medium">15 Acres • Gujarat</p>
+                                            <div className="flex items-center space-x-1">
+                                                <span className="text-blue-500 text-xs">✓</span>
+                                                <span className="text-xs text-gray-500">Industrial Verified • 5hrs ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center space-x-4">
+                                        <img
+                                            src="/hillside-property.jpg"
+                                            alt="Hillside Property"
+                                            className="w-14 h-14 rounded-lg object-cover"
+                                        />
+                                        <div>
+                                            <div className="flex items-center space-x-2">
+                                                <span className="text-sm font-semibold text-gray-900">Meera Singh</span>
+                                                <span className="px-2 py-1 bg-amber-200 text-amber-800 text-xs rounded font-semibold">
+                                                    Agent
+                                                </span>
+                                            </div>
+                                            <p className="text-sm text-gray-700 font-medium">25 Acres • Himachal Pradesh</p>
+                                            <div className="flex items-center space-x-1">
+                                                <span className="text-blue-500 text-xs">✓</span>
+                                                <span className="text-xs text-gray-500">Scenic Listed • 6hrs ago</span>
                                             </div>
                                         </div>
                                     </div>

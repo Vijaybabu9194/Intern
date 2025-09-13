@@ -48,7 +48,8 @@ const Header = () => {
                         {/* Logo and tagline */}
                         <div className="flex items-center gap-3">
                             <Link to="/" className="flex items-center">
-                                <div className="text-black font-bold text-2xl tracking-tight">
+                                <div className={`text-black font-bold text-2xl tracking-tight ${location.pathname === "/" ? "opacity-100" : "opacity-90"
+                                    }`}>
                                     <span className="bg-yellow-400 px-2 py-1 rounded">1a</span>
                                     <span>cre.in</span>
                                 </div>
@@ -60,7 +61,9 @@ const Header = () => {
                         <nav className="hidden md:flex items-center space-x-4">
                             <Link
                                 to="/map"
-                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1 px-2 ${location.pathname === "/map" ? "font-bold" : ""
+                                className={`hover:text-gray-900 transition-colors flex items-center gap-1 px-2 ${location.pathname === "/map"
+                                        ? "text-black font-black"
+                                        : "text-gray-700 font-medium"
                                     }`}
                             >
                                 <MapPin className="w-4 h-4" />
@@ -69,7 +72,9 @@ const Header = () => {
                             <div className="w-px h-6 bg-gray-300"></div>
                             <Link
                                 to="/buy-land"
-                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors px-2 ${location.pathname === "/buy-land" ? "font-bold" : ""
+                                className={`hover:text-gray-900 transition-colors px-2 ${location.pathname === "/buy-land" || location.pathname === "/handholding" || location.pathname === "/tag-along"
+                                        ? "text-black font-black"
+                                        : "text-gray-700 font-medium"
                                     }`}
                             >
                                 Buy Land
@@ -77,7 +82,9 @@ const Header = () => {
                             <div className="w-px h-6 bg-gray-300"></div>
                             <Link
                                 to="/sell-land"
-                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors px-2 ${location.pathname === "/sell-land" ? "font-bold" : ""
+                                className={`hover:text-gray-900 transition-colors px-2 ${location.pathname === "/sell-land"
+                                        ? "text-black font-black"
+                                        : "text-gray-700 font-medium"
                                     }`}
                             >
                                 Sell Land
@@ -85,7 +92,9 @@ const Header = () => {
                             <div className="w-px h-6 bg-gray-300"></div>
                             <Link
                                 to="/subscribe"
-                                className={`text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center gap-1 px-2 ${location.pathname === "/subscribe" ? "font-bold" : ""
+                                className={`hover:text-gray-900 transition-colors flex items-center gap-1 px-2 ${location.pathname === "/subscribe"
+                                        ? "text-black font-black"
+                                        : "text-gray-700 font-medium"
                                     }`}
                             >
                                 <Crown className="w-4 h-4 text-yellow-500" />
@@ -139,7 +148,8 @@ const Header = () => {
                             <nav className="space-y-6">
                                 <Link
                                     to="/about"
-                                    className="flex items-center gap-3 text-gray-700 hover:text-gray-900 py-3"
+                                    className={`flex items-center gap-3 text-gray-700 hover:text-gray-900 py-3 ${location.pathname === "/about" ? "font-bold" : ""
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <Info className="w-5 h-5 text-gray-500" />
@@ -148,7 +158,8 @@ const Header = () => {
 
                                 <Link
                                     to="/verification"
-                                    className="flex items-center gap-3 text-gray-700 hover:text-gray-900 py-3"
+                                    className={`flex items-center gap-3 text-gray-700 hover:text-gray-900 py-3 ${location.pathname === "/verification" ? "font-bold" : ""
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <CheckSquare className="w-5 h-5 text-gray-500" />
@@ -157,7 +168,8 @@ const Header = () => {
 
                                 <Link
                                     to="/contact"
-                                    className="flex items-center justify-between text-gray-700 hover:text-gray-900 py-3"
+                                    className={`flex items-center justify-between text-gray-700 hover:text-gray-900 py-3 ${location.pathname === "/contact" ? "font-bold" : ""
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <div className="flex items-center gap-3">
@@ -198,7 +210,8 @@ const Header = () => {
                             <div className="mt-8 pt-6 border-t border-gray-200 space-y-4">
                                 <Link
                                     to="/privacy"
-                                    className="flex items-center gap-3 text-gray-600 hover:text-gray-900"
+                                    className={`flex items-center gap-3 text-gray-600 hover:text-gray-900 ${location.pathname === "/privacy" ? "font-bold" : ""
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <Shield className="w-5 h-5" />
@@ -206,7 +219,8 @@ const Header = () => {
                                 </Link>
                                 <Link
                                     to="/terms"
-                                    className="flex items-center gap-3 text-gray-600 hover:text-gray-900"
+                                    className={`flex items-center gap-3 text-gray-600 hover:text-gray-900 ${location.pathname === "/terms" ? "font-bold" : ""
+                                        }`}
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <FileText className="w-5 h-5" />

@@ -15,7 +15,7 @@ const BuyLand = () => {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Buy <span className="text-gray-600">Through 1acre</span>
@@ -23,38 +23,38 @@ const BuyLand = () => {
                 </div>
 
                 {/* Service Cards */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                     {/* Hand Holding Card */}
                     <Link to="/handholding">
-                        <div className="bg-yellow-100 rounded-2xl p-8 flex items-center justify-between hover:bg-yellow-200 transition-colors cursor-pointer">
+                        <div className="bg-yellow-100 rounded-xl p-6 flex items-center justify-between hover:bg-yellow-200 transition-colors cursor-pointer">
                             <div className="flex items-center">
-                                <div className="mr-6">
-                                    <Handshake className="w-8 h-8 text-gray-700" />
+                                <div className="mr-4">
+                                    <Handshake className="w-6 h-6 text-gray-700" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Hand holding</h3>
-                                    <p className="text-gray-700 text-lg">We help you find, evaluate, and buy the right lands.</p>
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-1">Hand holding</h3>
+                                    <p className="text-gray-700 text-base">We help you find, evaluate, and buy the right lands.</p>
                                 </div>
                             </div>
-                            <ArrowRight className="w-6 h-6 text-gray-600" />
+                            <ArrowRight className="w-5 h-5 text-gray-600" />
                         </div>
                     </Link>
 
                     {/* Tag Along Card */}
                     <Link to="/tag-along">
-                        <div className="bg-white border border-gray-200 rounded-2xl p-8 flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer">
+                        <div className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer">
                             <div className="flex items-center">
-                                <div className="mr-6">
-                                    <Users className="w-8 h-8 text-gray-700" />
+                                <div className="mr-4">
+                                    <Users className="w-6 h-6 text-gray-700" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Tag along</h3>
-                                    <p className="text-gray-700 text-lg">
+                                    <h3 className="text-xl font-semibold text-gray-900 mb-1">Tag along</h3>
+                                    <p className="text-gray-700 text-base">
                                         We Buy Lands. You can tag-along with us. (Starting at 4 lakh/ acre)
                                     </p>
                                 </div>
                             </div>
-                            <ArrowRight className="w-6 h-6 text-gray-600" />
+                            <ArrowRight className="w-5 h-5 text-gray-600" />
                         </div>
                     </Link>
                 </div>
